@@ -33,7 +33,7 @@ esfera::esfera(int x, int y)
 
     posy=y;
 
-    r=10;
+    r=45;
 
     setPos(posx,posy);
 
@@ -79,28 +79,28 @@ void esfera::MoveRight()
 void esfera::MoveLeft()
 {
     this->posx-=velocidad;
-    filas=89;
+    filas=99;
     setPos(posx,posy);
 }
 
 void esfera::MoveUp()
 {
     this->posy-=velocidad;
-    filas=177;
+    filas=198;
     setPos(posx,posy);
 }
 
 void esfera::MoveDown()
 {
     this->posy+=velocidad;
-    filas=264;
+    filas=297;
     setPos(posx,posy);
 }
 
 void esfera::actualizacion()
 {
-    columnas+=90;
-    if(columnas>=470){
+    columnas+=100;
+    if(columnas>=390){
         columnas=0;
     }
 
