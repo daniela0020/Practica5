@@ -62,9 +62,9 @@ void esfera::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     //painter->setBrush(Qt::darkBlue);
     //painter->drawEllipse(boundingRect());
     QPixmap pixmap;
-    pixmap.load(":/../Pacman.png");
+    pixmap.load(":/Imagen/Pacman.png");
     painter->drawPixmap(boundingRect(), pixmap, pixmap.rect());
-    //painter->drawPixmap(-r,-r,*pixmap,columnas,filas,2*r,2*r);
+    painter->drawPixmap(-r,-r,pixmap,columnas,filas,2*r,2*r);
 
 }
 
