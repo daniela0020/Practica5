@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     scene=new QGraphicsScene();
     ui->graphicsView->setScene(scene);
     scene->setSceneRect(0,0,600,541);
-    //scene->setBackgroundBrush(Qt::black);
+    scene->setBackgroundBrush(Qt::black);
     puntuacion = 0;
     moverIx1=false;
     moverDx1=false;

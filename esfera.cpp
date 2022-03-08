@@ -33,7 +33,7 @@ esfera::esfera(int x, int y)
 
     posy=y;
 
-    r=45;
+    r=50;
 
     setPos(posx,posy);
 
