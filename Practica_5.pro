@@ -11,11 +11,15 @@ CONFIG += c++11
 SOURCES += \
     esfera.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    pared.cpp \
+    puntos.cpp
 
 HEADERS += \
     esfera.h \
-    mainwindow.h
+    mainwindow.h \
+    pared.h \
+    puntos.h
 
 FORMS += \
     mainwindow.ui

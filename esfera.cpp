@@ -33,7 +33,7 @@ esfera::esfera(int x, int y)
 
     posy=y;
 
-    r=50;
+    r=20;
 
     setPos(posx,posy);
 
@@ -41,9 +41,9 @@ esfera::esfera(int x, int y)
 
     columnas=0;
 
-    //pixmap=new QPixmap(":/../Pacman.png");
+    pixmap=new QPixmap(":/Imagen/Pacman.png");
 
-    timer->start(100);
+    timer->start(100); //modifica la velocidad en que itera entre las imagenes, tiempo en milisegundos
 
     connect(timer,&QTimer::timeout,this,&esfera::actualizacion);
 
@@ -61,10 +61,10 @@ void esfera::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 
     //painter->setBrush(Qt::darkBlue);
     //painter->drawEllipse(boundingRect());
-    QPixmap pixmap;
-    pixmap.load(":/Imagen/Pacman.png");
-    painter->drawPixmap(boundingRect(), pixmap, pixmap.rect());
-    painter->drawPixmap(-r,-r,pixmap,columnas,filas,2*r,2*r);
+    //QPixmap pixmap;
+    //pixmap.load(":/Imagen/Pacman.png");
+    //painter->drawPixmap(boundingRect(), pixmap, pixmap.rect());
+    painter->drawPixmap(-r,-r,*pixmap,columnas,filas,2*r,2*r);
 
 }
 
@@ -79,28 +79,28 @@ void esfera::MoveRight()
 void esfera::MoveLeft()
 {
     this->posx-=velocidad;
-    filas=99;
+    filas=39;
     setPos(posx,posy);
 }
 
 void esfera::MoveUp()
 {
     this->posy-=velocidad;
-    filas=198;
+    filas=78;
     setPos(posx,posy);
 }
 
 void esfera::MoveDown()
 {
     this->posy+=velocidad;
-    filas=297;
+    filas=117;
     setPos(posx,posy);
 }
 
 void esfera::actualizacion()
 {
-    columnas+=100;
-    if(columnas>=390){
+    columnas+=40;
+    if(columnas>=190){
         columnas=0;
     }
 
@@ -108,16 +108,7 @@ void esfera::actualizacion()
 }
 
 /*
-esfera::esfera(QObject *parent) :
-    QObject(parent), QGraphicsItem()
-{
-    currentFrame = 0;   // Sets the coordinates of the current frame of the sprite
-    spriteImage = new QPixmap(":/../Pacman.png"); // Load the sprite image QPixmap
-    timer = new QTimer();   // Create a timer for sprite animation
-    connect(timer, &QTimer::timeout, this, &esfera::nextFrame);
-    timer->start(33);   // Run the sprite on the signal generation with a frequency of 25 ms
-    //vy=7;
-}
+
 QRectF esfera::boundingRect() const
 {
     return QRectF(-10,-10,20,20);

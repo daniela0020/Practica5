@@ -39,9 +39,6 @@ public:
 
 public slots:
     void actualizacion();
-/*
-public slots:
-    void nextFrame();   // Slot for turning images into QPixmap*/
 };
 
 #endif // ESFERA_H
