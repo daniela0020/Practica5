@@ -21,11 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
     moverDx1=false;
     moverUy1=false;
     moverDy1=false;
-    l1 = new QGraphicsLineItem(0,0,0,400);
-    l2 = new QGraphicsLineItem(700,0,700,400);
-
-    scene->addItem(l1);
-    scene->addItem(l2);
 
     //ui->graphicsView->setBackgroundBrush(QBrush(QImage(":/../fondo.png")));
 
@@ -166,7 +161,7 @@ void MainWindow::keyPressEvent(QKeyEvent *ev)
             Puntos.erase(itp);
             emit aviso(9);
         }
-        if(Pacman->collidesWithItem(l1)){
+        if(Pacman->getPosx()<= 0){
             Pacman->setPosx(649);
             Pacman->setPosy(387);
         }
@@ -182,7 +177,7 @@ void MainWindow::keyPressEvent(QKeyEvent *ev)
             scene->removeItem(*itp);
             emit aviso(9);
         }
-        if(Pacman->collidesWithItem(l2)){
+        if(Pacman->getPosx()>=700){
             Pacman->setPosx(50);
             Pacman->setPosy(387);
         }

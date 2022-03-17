@@ -52,8 +52,6 @@ private:
     esfera* Pacman;
     QTimer *timer;
     puntos* rectangulos;
-    QGraphicsLineItem* l1;
-    QGraphicsLineItem* l2;
 
     int puntuacion;
 
